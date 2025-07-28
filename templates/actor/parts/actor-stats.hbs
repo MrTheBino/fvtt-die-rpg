@@ -1,0 +1,63 @@
+{{!-- Defense --}}
+<h2>Main</h2>
+<div class="resources grid grid-6col">
+    <div class="resource flex-group-center">
+        <label for="system.attributes.strength.value" class="resource-label rollable" data-roll="{{system.attributes.strength.value}}" data-label="Strength">Str</label>
+        <input type="text" name="system.attributes.strength.value" value="{{system.attributes.strength.value}}" data-dtype="Number"/>
+    </div>
+    <div class="resource flex-group-center">
+        <label for="system.attributes.dexterity.value" class="resource-label rollable" data-roll="{{system.attributes.dexterity.value}}" data-label="Dexterity">Dex</label>
+        <input type="text" name="system.attributes.dexterity.value" value="{{system.attributes.dexterity.value}}" data-dtype="Number"/>
+    </div>
+    <div class="resource flex-group-center">
+        <label for="system.attributes.constitution.value" class="resource-label rollable" data-roll="{{system.attributes.constitution.value}}" data-label="Constitution">Con</label>
+        <input type="text" name="system.attributes.constitution.value" value="{{system.attributes.constitution.value}}" data-dtype="Number"/>
+    </div>
+    <div class="resource flex-group-center">
+        <label for="system.attributes.wisdom.value" class="resource-label rollable" data-roll="{{system.attributes.wisdom.value}}" data-label="Wisdom">Wis</label>
+        <input type="text" name="system.attributes.wisdom.value" value="{{system.attributes.wisdom.value}}" data-dtype="Number"/>
+    </div>
+    <div class="resource flex-group-center">
+        <label for="system.attributes.intelligence.value" class="resource-label rollable" data-roll="{{system.attributes.intelligence.value}}" data-label="Intelligence">Int</label>
+        <input type="text" name="system.attributes.intelligence.value" value="{{system.attributes.intelligence.value}}" data-dtype="Number"/>
+    </div>
+    <div class="resource flex-group-center">
+        <label for="system.attributes.charisma.value" class="resource-label rollable" data-roll="{{system.attributes.charisma.value}}" data-label="Charisma">Cha</label>
+        <input type="text" name="system.attributes.charisma.value" value="{{system.attributes.charisma.value}}" data-dtype="Number"/>
+    </div>
+</div>
+
+<h2>Defense</h2>
+<div class="resources grid grid-4col">
+    <div class="resource flex-group-center">
+        <label for="system.guard.value" class="resource-label">Guard</label>
+        <input type="text" name="system.guard.value" value="{{system.guard.value}}" data-dtype="Number"/>
+        <span> / </span>
+        <input type="text" name="system.guard.max" value="{{system.guard.max}}" data-dtype="Number"/>
+    </div>
+
+
+
+    <div class="resource flex-group-center">
+        <label for="system.health.value" class="resource-label">Health</label>
+        <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+        <span> / </span>
+        <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+    </div>
+
+
+
+    <div class="resource flex-group-center">
+        <label for="system.willpower.value" class="resource-label">Willpower</label>
+        <input type="text" name="system.willpower.value" value="{{system.willpower.value}}" data-dtype="Number"/>
+        <span> / </span>
+        <input type="text" name="system.willpower.max" value="{{system.willpower.max}}" data-dtype="Number"/>
+    </div>
+
+    <div class="resource flex-group-center">
+        <label for="system.defence.value" class="resource-label">Defence</label>
+        <input type="text" name="system.defence.value" value="{{system.defence.value}}" data-dtype="Number"/>
+        <span> / </span>
+        <input type="text" name="system.defence.max" value="{{system.defence.max}}" data-dtype="Number"/>
+    </div>
+</div>

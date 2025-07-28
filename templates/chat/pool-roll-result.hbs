@@ -1,0 +1,33 @@
+<form class="roll-card">
+  <div class="card-title">
+    {{label}}
+  </div>
+  <div class="roll-result">
+    <div class="roll-successes">
+      <span>{{localize 'DIE_RPG.Labels.successes'}}: {{numSuccesses}}</span>
+    </div>
+    <div class="roll-row">
+      <span>{{localize 'DIE_RPG.Labels.successes_on'}}: {{rollDiceFaceSuccess}}+</span>
+    </div>
+    <div class="roll-row">
+      <span>{{localize 'DIE_RPG.Labels.difficulty'}}: {{rollDifficulty}}+</span>
+    </div>
+    <div class="roll-row">
+      <span>{{localize 'DIE_RPG.Labels.successes_after_difficulty'}}: {{successesAfterDifficulty}}</span>
+    </div>
+    {{#if (eq isCriticalFail true)}}
+      <div class="roll-row">
+        <span><strong>{{localize 'DIE_RPG.Labels.critical_fail'}}</strong></span>
+      </div>
+    {{/if}}
+  </div>
+
+<div class="roll-result">
+    <div class="roll-row-singles">
+        {{#each singleRolls as |sr|}}
+            <span>{{sr}}</span>
+        {{/each}}
+    </div>
+  </div>
+
+</form>

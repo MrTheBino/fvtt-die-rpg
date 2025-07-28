@@ -1,0 +1,51 @@
+{
+  "DIE_RPG": {
+    "Labels": {
+      "roll": "Roll",
+      "successes": "Successes",
+      "successes_on": "Successes on",
+      "difficulty": "Difficulty",
+      "successes_after_difficulty": "Successes after Difficulty",
+      "critical_fail": "Critical Fail"
+    },
+    "Ability": {
+      "Str": { "long": "Strength", "abbr": "str" },
+      "Con": { "long": "Constitution", "abbr": "con" },
+      "Dex": { "long": "Dexterity", "abbr": "dex" },
+      "Int": { "long": "Intelligence", "abbr": "int" },
+      "Wis": { "long": "Wisdom", "abbr": "wis" },
+      "Cha": { "long": "Charisma", "abbr": "cha" }
+    },
+    "SheetLabels": {
+      "Actor": "DieRpg Actor Sheet",
+      "Item": "DieRpg Item Sheet"
+    },
+    "Item": {
+      "Spell": {
+        "SpellLVL": "Level {level} Spells",
+        "AddLVL": "Add LVL {level}"
+      }
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item",
+      "feature": "Feature",
+      "spell": "Spell",
+      "classFeature": "Class Feature",
+      "classFeatureGod": "God - Godbinder"
+    }
+  }
+}
