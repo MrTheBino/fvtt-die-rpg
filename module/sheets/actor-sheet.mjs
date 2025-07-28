@@ -96,6 +96,11 @@ export class DieRpgActorSheet extends ActorSheet {
   _prepareCharacterData(context) {
     // This is where you can enrich character-specific editor fields
     // or setup anything else that's specific to this type
+    for(let i = 0; i < 6; i++){
+      if (context.system.foolDieFace[i] == undefined) {
+        context.system.foolDieFace[i] = 0;
+      }
+    }
   }
 
   /**
@@ -186,6 +191,16 @@ export class DieRpgActorSheet extends ActorSheet {
       const item = this.actor.items.get(li.data('itemId'));
       item.delete();
       li.slideUp(200, () => this.render(false));
+    });
+
+    html.on("click",".fool-dice-clickable",(ev) => {
+      let dieFace = parseInt(ev.currentTarget.dataset.dieFaceStat)
+      this.actor.system.foolDieFace[dieFace] += 1;
+      if(this.actor.system.foolDieFace[dieFace] == 3){
+        this.actor.system.foolDieFace[dieFace] = 0;
+      }
+      this.actor.update({ 'system.foolDieFace': this.actor.system.foolDieFace });
+      this.render(false)
     });
 
     // update

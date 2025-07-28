@@ -12,6 +12,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/fvtt-die-rpg/templates/actor/parts/actor-effects.hbs',
     'systems/fvtt-die-rpg/templates/actor/parts/actor-the-godbinder.hbs',
     'systems/fvtt-die-rpg/templates/actor/parts/actor-the-neo.hbs',
+    'systems/fvtt-die-rpg/templates/actor/parts/actor-the-fool.hbs',
     'systems/fvtt-die-rpg/templates/actor/parts/actor-stats.hbs',
     // Item partials
     'systems/fvtt-die-rpg/templates/item/parts/item-effects.hbs',

@@ -1,0 +1,94 @@
+{{#each classFeatures as |item id|}}
+  <div class="class-feature item"  data-item-id='{{item._id}}'>
+    <h4>{{item.name}} </h4>
+    <div class='item-controls'>
+        <a
+          class='item-control item-edit'
+          title='{{localize "DOCUMENT.Update" type='Item'}}'
+        >
+          <i class='fas fa-edit'></i>
+        </a>
+        <a
+          class='item-control item-delete'
+          title='{{localize "DOCUMENT.Delete" type='Item'}}'
+        >
+          <i class='fas fa-trash'></i>
+        </a>
+      </div>
+    <p>{{{item.system.description}}}</p>
+  </div>
+{{/each}}
+<h2>Flukes</h2>
+<div class="resources grid grid-6col">
+    <div class="resource flex-group-center fool-dice-clickable" data-die-face-stat="0">
+        1
+        <div class="fool-dice-faces">
+            {{#if (eq system.foolDieFace.[0] 1)}}
+                0
+            {{/if}}
+            {{#if (eq system.foolDieFace.[0] 2)}}
+                X
+            {{/if}}
+        </div>
+    </div>
+
+   <div class="resource flex-group-center fool-dice-clickable" data-die-face-stat="1">
+        2
+        <div class="fool-dice-faces">
+            {{#if (eq system.foolDieFace.[1] 1)}}
+                0
+            {{/if}}
+            {{#if (eq system.foolDieFace.[1] 2)}}
+                X
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="resource flex-group-center fool-dice-clickable" data-die-face-stat="2">
+        3
+        <div class="fool-dice-faces">
+            {{#if (eq system.foolDieFace.[2] 1)}}
+                0
+            {{/if}}
+            {{#if (eq system.foolDieFace.[2] 2)}}
+                X
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="resource flex-group-center fool-dice-clickable" data-die-face-stat="3">
+        4
+        <div class="fool-dice-faces">
+            {{#if (eq system.foolDieFace.[3] 1)}}
+                0
+            {{/if}}
+            {{#if (eq system.foolDieFace.[3] 2)}}
+                X
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="resource flex-group-center fool-dice-clickable" data-die-face-stat="4">
+        5
+        <div class="fool-dice-faces">
+            {{#if (eq system.foolDieFace.[4] 1)}}
+                0
+            {{/if}}
+            {{#if (eq system.foolDieFace.[4] 2)}}
+                X
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="resource flex-group-center fool-dice-clickable" data-die-face-stat="5">
+        6
+        <div class="fool-dice-faces">
+            {{#if (eq system.foolDieFace.[5] 1)}}
+                0
+            {{/if}}
+            {{#if (eq system.foolDieFace.[5] 2)}}
+                X
+            {{/if}}
+        </div>
+    </div>
+</div>

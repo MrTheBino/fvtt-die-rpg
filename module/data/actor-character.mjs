@@ -11,6 +11,8 @@ export default class DieRpgCharacter extends DieRpgActorBase {
     schema.classDie = new fields.StringField({ blank: true });
     schema.fairGold = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 });
 
+    schema.foolDieFace = new fields.ArrayField(new fields.NumberField({ required: true, initial: 0 }));
+
     schema.attributes = new fields.SchemaField({
       strength: new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0 }),
