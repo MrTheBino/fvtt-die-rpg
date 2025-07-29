@@ -2,13 +2,13 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
-      from 1 to 12 and will create that number of columns.  --}}
-      <div class="resources grid grid-3col">
+      from 1 to 12 and will create that number of columns. --}}
+      <div class="resources grid grid-4col">
 
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
@@ -16,30 +16,74 @@
         <div class="resource flex-group-center">
           <label for="system.health.value" class="resource-label">Health</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+            <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number" />
             <span> / </span>
-            <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+            <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.power.value" class="resource-label">Power</label>
+          <label for="system.guard.value" class="resource-label">Guard</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.power.value" value="{{system.power.value}}" data-dtype="Number"/>
+            <input type="text" name="system.guard.value" value="{{system.guard.value}}" data-dtype="Number" />
             <span> / </span>
-            <input type="text" name="system.power.max" value="{{system.power.max}}" data-dtype="Number"/>
+            <input type="text" name="system.guard.max" value="{{system.guard.max}}" data-dtype="Number" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.cr" class="resource-label">CR / XP</label>
+          <label for="system.willpower.value" class="resource-label">Willpower</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.cr" value="{{system.cr}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" disabled="true" name="system.xp" value="{{system.xp}}" data-dtype="Number"/>
+            <input type="text" name="system.willpower.value" value="{{system.willpower.value}}" data-dtype="Number" />
           </div>
         </div>
 
+        <div class="resource flex-group-center">
+          <label for="system.defence.value" class="resource-label">Defence</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.defence.value" value="{{system.defence.value}}" data-dtype="Number" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="resources grid grid-6col">
+        <div class="resource flex-group-center">
+          <label for="system.attributes.strength.value" class="resource-label rollable"
+            data-roll="{{system.attributes.strength.value}}" data-label="Strength">Str</label>
+          <input type="text" name="system.attributes.strength.value" value="{{system.attributes.strength.value}}"
+            data-dtype="Number" />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.dexterity.value" class="resource-label rollable"
+            data-roll="{{system.attributes.dexterity.value}}" data-label="Dexterity">Dex</label>
+          <input type="text" name="system.attributes.dexterity.value" value="{{system.attributes.dexterity.value}}"
+            data-dtype="Number" />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.constitution.value" class="resource-label rollable"
+            data-roll="{{system.attributes.constitution.value}}" data-label="Constitution">Con</label>
+          <input type="text" name="system.attributes.constitution.value"
+            value="{{system.attributes.constitution.value}}" data-dtype="Number" />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.wisdom.value" class="resource-label rollable"
+            data-roll="{{system.attributes.wisdom.value}}" data-label="Wisdom">Wis</label>
+          <input type="text" name="system.attributes.wisdom.value" value="{{system.attributes.wisdom.value}}"
+            data-dtype="Number" />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.intelligence.value" class="resource-label rollable"
+            data-roll="{{system.attributes.intelligence.value}}" data-label="Intelligence">Int</label>
+          <input type="text" name="system.attributes.intelligence.value"
+            value="{{system.attributes.intelligence.value}}" data-dtype="Number" />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.charisma.value" class="resource-label rollable"
+            data-roll="{{system.attributes.charisma.value}}" data-label="Charisma">Cha</label>
+          <input type="text" name="system.attributes.charisma.value" value="{{system.attributes.charisma.value}}"
+            data-dtype="Number" />
+        </div>
       </div>
     </div>
   </header>
@@ -48,8 +92,6 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="effects">Effects</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -61,16 +103,5 @@
       {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
     </div>
 
-    {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/fvtt-die-rpg/templates/actor/parts/actor-items.hbs"}}
-    </div>
-
-    {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/fvtt-die-rpg/templates/actor/parts/actor-effects.hbs"}}
-    </div>
-
   </section>
 </form>
-

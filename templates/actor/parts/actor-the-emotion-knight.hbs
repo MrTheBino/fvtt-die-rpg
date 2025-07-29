@@ -1,12 +1,3 @@
-<div class="resources grid grid-2col">
-    <div class="resource">
-        <label for="system.fairGold" class="resource-label">Fair Gold</label>
-    </div>
-    <div class="resource">
-        <input type="text" name="system.fairGold" value="{{system.fairGold}}" data-dtype="Number" />
-    </div>
-</div>
-
 {{#each classFeatures as |item id|}}
 <div class="class-feature item" data-item-id='{{item._id}}'>
     <div class="grid grid-2col class-feature-header">
@@ -24,13 +15,27 @@
 </div>
 {{/each}}
 
-{{#each classFeatureNeo as |item id|}}
+<section class="">Hello</section>
+
+<div class="resources grid grid-2col">
+    <div class="resource flex-group-center">
+      <label for="system.emotionSelected" class="resource-label">Emotion</label>
+      <input type="text" name="system.emotionSelected" value="{{system.emotionSelected}}" data-dtype="String"
+        data-item-stat="system.emotionSelected" />
+    </div>
+    <div class="resource flex-group-center">
+      <label for="system.emotionScale" class="resource-label">Emotion Scale</label>
+      <input type="text" name="system.emotionScale" value="{{system.emotionScale}}" data-dtype="Number"
+        data-item-stat="system.emotionScale" class="item-editable-stat" />
+    </div>
+  </div>
+{{#each emotions as |item id|}}
 <div class="class-feature-neo item" data-item-id='{{item._id}}'>
     <div class="grid grid-2col class-feature-header">
         <h4>{{item.name}} </h4>
         <div class='item-controls align-right'>
             <span class="item-control ">
-                <label for="system.level" class="resource-label">Activated</label>
+                <label for="system.level" class="resource-label">Selected</label>
                 <input type="checkbox" name="system.activated" data-dtype="Boolean" data-item-stat="system.activated"
                     class="item-editable-stat" {{#if item.system.activated}}checked{{/if}} />
             </span>
@@ -42,6 +47,15 @@
             </a>
         </div>
     </div>
-    <div>{{{item.system.description}}}</div>
+
+    <div class="resources grid grid-7col">
+        <div class="emotion-level">{{item.system.emotion_lvl1}}</div>
+        <div class="emotion-sign">&gt;</div>
+        <div class="emotion-level">{{item.system.emotion_lvl2}}</div>
+        <div class="emotion-sign">&gt;</div>
+        <div class="emotion-level">{{item.system.emotion_lvl3}}</div>
+        <div class="emotion-sign">&gt;</div>
+        <div class="emotion-level">{{item.system.emotion_lvl4}}</div>
+    </div>
 </div>
 {{/each}}

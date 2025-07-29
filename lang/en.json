@@ -37,7 +37,7 @@
 
   "TYPES": {
     "Actor": {
-      "character": "Character",
+      "character": "Paragon",
       "npc": "NPC"
     },
     "Item": {
@@ -45,7 +45,11 @@
       "feature": "Feature",
       "spell": "Spell",
       "classFeature": "Class Feature",
-      "classFeatureGod": "God - Godbinder"
+      "classFeatureGod": "God",
+      "classFeatureNeo": "Neo Gift",
+      "emotion": "Emotion",
+      "fallenFeature": "Fallen Feature",
+      "fallenAbility": "Fallen Ability"
     }
   }
 }

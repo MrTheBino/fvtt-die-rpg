@@ -1,0 +1,78 @@
+<form class='{{cssClass}}' autocomplete='off'>
+    <header class='sheet-header'>
+        <img class='profile-img' src='{{item.img}}' data-edit='img' title='{{item.name}}' />
+        <div class='header-fields'>
+            <h1 class='charname'><input name='name' type='text' value='{{item.name}}' placeholder='Name' /></h1>
+            <div class='grid grid-2col'>
+                <div class='resource'>
+                    <label class='resource-label'>Activated</label>
+                    <input type="checkbox" name='system.activated' data-dtype='Boolean' {{#if
+                        system.activated}}checked{{/if}} />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{! Sheet Tab Navigation }}
+    <nav class='sheet-tabs tabs' data-group='primary'>
+        <a class='item' data-tab='description'>Description</a>
+        <a class='item' data-tab='emotions'>Emotions</a>
+    </nav>
+
+    {{! Sheet Body }}
+    <section class='sheet-body'>
+
+        {{! Description Tab }}
+        <div class='tab' data-group='primary' data-tab='description'>
+            {{! Editors must receive enriched text data from getData to properly handle rolls }}
+            {{editor
+            enrichedDescription
+            target='system.description'
+            engine='prosemirror'
+            button=true
+            editable=editable
+            }}
+        </div>
+
+        {{! Emotions Tab }}
+        <div class='tab emotions' data-group='primary' data-tab='emotions'>
+            {{! As you add new fields, add them in here! }}
+            <div class='resource'>
+                <label class='resource-label'>Level 1:</label>
+                <div class='grid grid-1col'>
+                    <div class=''>
+                        <input type='text' name='system.emotion_lvl1' value='{{system.emotion_lvl1}}'
+                            data-dtype='String' />
+                    </div>
+                </div>
+            </div>
+            <div class='resource'>
+                <label class='resource-label'>Level 2:</label>
+                <div class='grid grid-1col'>
+                    <div class=''>
+                        <input type='text' name='system.emotion_lvl2' value='{{system.emotion_lvl2}}'
+                            data-dtype='String' />
+                    </div>
+                </div>
+            </div>
+            <div class='resource'>
+                <label class='resource-label'>Level 3:</label>
+                <div class='grid grid-1col'>
+                    <div class=''>
+                        <input type='text' name='system.emotion_lvl3' value='{{system.emotion_lvl3}}'
+                            data-dtype='String' />
+                    </div>
+                </div>
+            </div>
+            <div class='resource'>
+                <label class='resource-label'>Level 4:</label>
+                <div class='grid grid-1col'>
+                    <div class=''>
+                        <input type='text' name='system.emotion_lvl4' value='{{system.emotion_lvl4}}'
+                            data-dtype='String' />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

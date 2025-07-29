@@ -11,6 +11,15 @@
 }
 
 .grid,
+.grid-1col {
+  display: grid;
+  grid-column: span 1/span 1;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
 .grid-2col {
   display: grid;
   grid-column: span 2/span 2;
@@ -252,6 +261,19 @@
 .fvtt-die-rpg .resource-label {
   font-weight: bold;
 }
+.fvtt-die-rpg .class-feature-header {
+  border-bottom: 1px solid red;
+}
+.fvtt-die-rpg .class-feature-header h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.fvtt-die-rpg section {
+  margin: 0;
+}
+.fvtt-die-rpg section h3 {
+  margin: 0;
+}
 .fvtt-die-rpg .items-header {
   height: 28px;
   margin: 2px 0;
@@ -353,6 +375,14 @@
   flex: 0 0 200px;
   padding: 0 8px;
 }
+.fvtt-die-rpg .emotion-sign {
+  font-size: 2em;
+  font-weight: bold;
+}
+.fvtt-die-rpg .item-list-description {
+  display: block;
+  font-size: 12px;
+}
 .fvtt-die-rpg .effects .item .effect-source,
 .fvtt-die-rpg .effects .item .effect-duration,
 .fvtt-die-rpg .effects .item .effect-controls {
@@ -369,6 +399,47 @@
   width: 50px;
   height: 50px;
   padding: 20px;
+}
+
+.roll-card {
+  border: 1px solid black;
+}
+
+.roll-card .card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.roll-card .roll-row {
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.roll-card .roll-successes {
+  border: 1px solid gray;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.roll-card .roll-row-singles {
+  font-size: 14px;
+  text-align: center;
+}
+
+.roll-card .roll-row-singles span {
+  border: 1px solid gray;
+  padding: 1px;
+}
+
+.roll-result {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=fvtt-die-rpg.css.map */

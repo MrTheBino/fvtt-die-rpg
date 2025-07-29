@@ -1,14 +1,5 @@
-<div class="resources grid grid-2col">
-    <div class="resource">
-        <label for="system.fairGold" class="resource-label">Fair Gold</label>
-    </div>
-    <div class="resource">
-        <input type="text" name="system.fairGold" value="{{system.fairGold}}" data-dtype="Number" />
-    </div>
-</div>
-
-{{#each classFeatures as |item id|}}
-<div class="class-feature item" data-item-id='{{item._id}}'>
+{{#each classFallenFeatures as |item id|}}
+<div class="class-feature-neo item" data-item-id='{{item._id}}'>
     <div class="grid grid-2col class-feature-header">
         <h4>{{item.name}} </h4>
         <div class='item-controls align-right'>
@@ -24,15 +15,16 @@
 </div>
 {{/each}}
 
-{{#each classFeatureNeo as |item id|}}
+<h2>Not Just Monstrous Face</h2>
+{{#each classFallenAbilities as |item id|}}
 <div class="class-feature-neo item" data-item-id='{{item._id}}'>
     <div class="grid grid-2col class-feature-header">
         <h4>{{item.name}} </h4>
         <div class='item-controls align-right'>
             <span class="item-control ">
-                <label for="system.level" class="resource-label">Activated</label>
-                <input type="checkbox" name="system.activated" data-dtype="Boolean" data-item-stat="system.activated"
-                    class="item-editable-stat" {{#if item.system.activated}}checked{{/if}} />
+                <label for="system.level" class="resource-label">Selected</label>
+                <input type="checkbox" name="system.selected" data-dtype="Boolean" data-item-stat="system.selected"
+                    class="item-editable-stat" {{#if item.system.selected}}checked{{/if}} />
             </span>
             <a class='item-control item-edit' title='{{localize "DOCUMENT.Update" type=' Item'}}'>
                 <i class='fas fa-edit'></i>

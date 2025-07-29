@@ -14,7 +14,7 @@ export class DieRpgActorSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['fvtt-die-rpg', 'sheet', 'actor'],
-      width: 600,
+      width: 700,
       height: 600,
       tabs: [
         {
@@ -114,6 +114,9 @@ export class DieRpgActorSheet extends ActorSheet {
     const classFeatures = []
     const classFeatureGods = []
     const classFeaturesNeo = []
+    const classEmotions = [];
+    const classFallenFeatures = [];
+    const classFallenAbilities = [];
     const features = [];
     const spells = {
       0: [],
@@ -148,6 +151,18 @@ export class DieRpgActorSheet extends ActorSheet {
       else if (i.type === 'classFeatureNeo') {
         classFeaturesNeo.push(i);
       }
+      // Append to fallen features.
+      else if (i.type === 'fallenFeature') {
+        classFallenFeatures.push(i);
+      }
+      // Append to fallen abilities.
+      else if (i.type === 'fallenAbility') {
+        classFallenAbilities.push(i);
+      }
+      // Append to emotions.
+      else if (i.type === 'emotion') {
+        classEmotions.push(i);
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -163,6 +178,9 @@ export class DieRpgActorSheet extends ActorSheet {
     context.classFeatures = classFeatures;
     context.classFeatureGods = classFeatureGods;
     context.classFeatureNeo = classFeaturesNeo;
+    context.emotions = classEmotions;
+    context.classFallenFeatures = classFallenFeatures;
+    context.classFallenAbilities = classFallenAbilities;
   }
 
   /* -------------------------------------------- */

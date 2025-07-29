@@ -3,6 +3,6 @@
     "types": ["character", "npc"]
   },
   "Item": {
-    "types": ["item","spell","classFeature","classFeatureGod","classFeatureNeo"]
+    "types": ["item","spell","classFeature","classFeatureGod","classFeatureNeo","emotion","fallenFeature","fallenAbility"]
   }
 }

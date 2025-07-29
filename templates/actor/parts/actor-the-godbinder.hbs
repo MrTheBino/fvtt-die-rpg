@@ -1,51 +1,45 @@
 {{#each classFeatures as |item id|}}
-  <div class="class-feature item"  data-item-id='{{item._id}}'>
+<div class="class-feature item" data-item-id='{{item._id}}'>
+  <div class="grid grid-2col class-feature-header">
     <h4>{{item.name}} </h4>
-    <div class='item-controls'>
-        <a
-          class='item-control item-edit'
-          title='{{localize "DOCUMENT.Update" type='Item'}}'
-        >
-          <i class='fas fa-edit'></i>
-        </a>
-        <a
-          class='item-control item-delete'
-          title='{{localize "DOCUMENT.Delete" type='Item'}}'
-        >
-          <i class='fas fa-trash'></i>
-        </a>
-      </div>
-    <p>{{{item.system.description}}}</p>
+    <div class='item-controls align-right'>
+      <a class='item-control item-edit' title='{{localize "DOCUMENT.Update" type=' Item'}}'>
+        <i class='fas fa-edit'></i>
+      </a>
+      <a class='item-control item-delete' title='{{localize "DOCUMENT.Delete" type=' Item'}}'>
+        <i class='fas fa-trash'></i>
+      </a>
+    </div>
   </div>
+  <div>{{{item.system.description}}}</div>
+</div>
 {{/each}}
 
 {{#each classFeatureGods as |item id|}}
-  <div class="class-feature-gods item"  data-item-id='{{item._id}}'>
+<div class="class-feature-gods item" data-item-id='{{item._id}}'>
+  <div class="grid grid-2col class-feature-header">
     <h4>{{item.system.customName}} - {{item.name}} </h4>
-    <div class='item-controls'>
-        <a
-          class='item-control item-edit'
-          title='{{localize "DOCUMENT.Update" type='Item'}}'
-        >
-          <i class='fas fa-edit'></i>
-        </a>
-        <a
-          class='item-control item-delete'
-          title='{{localize "DOCUMENT.Delete" type='Item'}}'
-        >
-          <i class='fas fa-trash'></i>
-        </a>
-      </div>
-    <div class="resources grid grid-2col">
-    <div class="resource flex-group-center">
-        <label for="system.level" class="resource-label">Level</label>
-        <input type="text" name="system.level" value="{{item.system.level}}" data-dtype="Number" data-item-stat="system.level" class="item-editable-stat"/>
+    <div class='item-controls align-right'>
+      <a class='item-control item-edit' title='{{localize "DOCUMENT.Update" type=' Item'}}'>
+        <i class='fas fa-edit'></i>
+      </a>
+      <a class='item-control item-delete' title='{{localize "DOCUMENT.Delete" type=' Item'}}'>
+        <i class='fas fa-trash'></i>
+      </a>
     </div>
-    <div class="resource flex-group-center">
-        <label for="system.debt" class="resource-label">Debt</label>
-        <input type="text" name="system.debt" value="{{item.system.debt}}" data-dtype="Number" data-item-stat="system.debt" class="item-editable-stat"/>
-    </div>
-    </div>
-    <p>{{{item.system.description}}}</p>
   </div>
+  <div class="resources grid grid-2col">
+    <div class="resource flex-group-center">
+      <label for="system.level" class="resource-label">Level</label>
+      <input type="text" name="system.level" value="{{item.system.level}}" data-dtype="Number"
+        data-item-stat="system.level" class="item-editable-stat" />
+    </div>
+    <div class="resource flex-group-center">
+      <label for="system.debt" class="resource-label">Debt</label>
+      <input type="text" name="system.debt" value="{{item.system.debt}}" data-dtype="Number"
+        data-item-stat="system.debt" class="item-editable-stat" />
+    </div>
+  </div>
+  <div>{{{item.system.description}}}</div>
+</div>
 {{/each}}
